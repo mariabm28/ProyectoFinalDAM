@@ -19,7 +19,7 @@ Este es el proyecto final del ciclo **Desarrollo de Aplicaciones Multiplataforma
 | Seguridad         | Firebase Authentication (para admin) |
 | Infraestructura   | Docker Desktop (PostgreSQL)         |
 
-# 📄 Organización/Estructura del proyecto en GitHub
+## 📄 Organización/Estructura del proyecto en GitHub
 
 - En la rama MAIN se encuentran dos manuales: la guía paso a paso para hacer el proyecto y un resumen-explicación del proyecto.
 
