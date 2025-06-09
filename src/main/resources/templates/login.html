@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            background-color: #af4c87;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #af4c87;
+        }
+        .message {
+            margin-top: 1rem;
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/login}" method="post">
+    <h2>Iniciar sesión</h2>
+    <label>Email:</label>
+    <input type="email" name="username"/>
+    <label>Contraseña:</label>
+    <input type="password" name="password"/>
+    <button type="submit">Entrar</button>
+
+    <div class="message" th:if="${param.error}">
+        Usuario o contraseña incorrectos
+    </div>
+
+    <div class="message" th:if="${param.logout}" style="color: green;">
+        Has cerrado sesión
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Citas</title>
+    <style>
+        body{
+            font-family:'Segoe UI',system-ui,sans-serif;
+            background:#f2f6fc;
+            color:#263238;
+            margin:0;
+        }
+
+        h1{ text-align:center; margin:2rem 0 1.5rem }
+
+        .card{
+            background:#fff;
+            width:75%;
+            max-width:960px;
+            margin:0 auto 2rem;
+            padding:0;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,.08);
+            overflow:hidden;
+        }
+
+        table{ width:100%; border-collapse:collapse }
+        th,td{ padding:.9rem 1.2rem; }
+        th{
+            background: #e39b86;
+            color:#fff;
+            text-align:left;
+            font-weight:600;
+        }
+        tr:nth-child(even){ background:#f7fbff }
+        tr:nth-child(odd){ background:#eef6fa }
+
+        .btn{
+            border:none; cursor:pointer; font-size:.85rem;
+            padding:.45rem .9rem; border-radius:6px;
+            color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:.3rem;
+        }
+        .btn:hover{ opacity:.9 }
+        .btn.blue{ background: #d219a7
+        }
+        .btn.add{ background: rgba(223, 27, 80, 0.82)
+        }
+        .btn.red{ background:#e53935 }
+
+        .btn-volver{
+            background:#e6e5e5;
+            color:#080808;
+        }
+        .btn-volver:hover{
+            background: #757575;
+            color:#080808;
+        }
+
+        .actions-bottom{
+            width:75%;
+            max-width:960px;
+            margin:0 auto 2rem;
+            display:flex;
+            justify-content:space-between;   /* ← volver | añadir →  */
+            gap:.5rem;
+        }
+
+        .add-wrapper{ width:75%; max-width:960px; margin:0 auto 2rem }
+    </style>
+</head>
+<body>
+<h1>Citas</h1>
+<div class="card">
+
+    <table>
+        <thead>
+        <tr>
+            <th>Fecha &amp; Hora</th>
+            <th>Cliente</th>
+            <th>Servicio</th>
+            <th style="text-align:center">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="c : ${citas}">
+            <td th:text="${#temporals.format(c.fecha,'dd/MM/yyyy HH:mm')}">01/06/25 10:00</td>
+            <td th:text="${c.usuario != null ? c.usuario.nombre : '‑'}">Cliente</td>
+            <td th:text="${c.servicio.nombre}">Servicio</td>
+            <td style="text-align:center;white-space:nowrap">
+                <a th:href="@{'/citas/editar/' + ${c.id}}"  class="btn blue">✏️ Editar</a>
+
+                <form th:action="@{'/citas/eliminar/' + ${c.id}}" method="post" style="display:inline">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                    <button type="submit" class="btn red"
+                            onclick="return confirm('¿Borrar cita?')">🗑️</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="actions-bottom">
+    <a th:href="@{/panel}" class="btn btn-volver">
+        ← Volver
+    </a>
+
+    <a class="btn add" th:href="@{/citas/nueva}">➕ Nueva cita</a>
+
+</div>
+</body>
+</html>
