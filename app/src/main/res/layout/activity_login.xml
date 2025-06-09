@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fnd5"
+    android:padding="24dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="24dp"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardElevation="12dp"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iniciar Sesión"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="20dp" />
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo electrónico"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@android:drawable/ic_dialog_email"
+                android:drawablePadding="10dp"
+                android:padding="14dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:drawableStart="@android:drawable/ic_lock_idle_lock"
+                android:drawablePadding="10dp"
+                android:padding="14dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entrar"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#E8BC98"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crear nuevo usuario"
+                android:textStyle="bold"
+                android:textColor="#E2A777"
+                android:backgroundTint="#EFEAEA" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+

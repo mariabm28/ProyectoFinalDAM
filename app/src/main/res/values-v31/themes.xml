@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ProyectoFinalAndroid" parent="Base.Theme.ProyectoFinalAndroid">
+        <!-- Fondo de la Splash Screen -->
+        <item name="android:windowSplashScreenBackground">#EFCDB5</item>
+
+        <!-- Icono animado para la Splash Screen -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/peluqueria</item>
+
+        <!-- Imagen de branding (opcional) -->
+        <item name="android:windowSplashScreenBrandingImage">@drawable/icono_pelu2</item>
+
+        <!-- Fondo del icono de Splash Screen -->
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/white</item>
+    </style>
+</resources>

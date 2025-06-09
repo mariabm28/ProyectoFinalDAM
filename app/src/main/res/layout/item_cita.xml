@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="#D0DFD0BF"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/iconoServicio"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/icono_pelu"
+        android:contentDescription="Icono"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="20dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fechaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/servicioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="Servicio"
+            android:textColor="#555555" />
+
+        <TextView
+            android:id="@+id/precioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:textSize="17sp"
+            android:textColor="#555555" />
+
+        <TextView
+            android:id="@+id/tiempoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiempo"
+            android:textSize="17sp"
+            android:textColor="#555555" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnEditar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/editar"
+        android:contentDescription="Editar" />
+
+    <ImageButton
+        android:id="@+id/btnEliminar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Eliminar"
+        android:src="@drawable/borrar" />
+
+</LinearLayout>
