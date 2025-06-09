@@ -4,7 +4,7 @@ Este es el proyecto final del ciclo **Desarrollo de Aplicaciones Multiplataforma
 ## 📱 Funcionalidades principales
 
 - Registro e inicio de sesión de usuarios (clientes)
-- Modificación de datos por parte el cliente
+- Modificación de datos por parte del cliente
 - Reserva de citas con visualización de los servicios disponibles
 - Visualización de citas agendadas por el cliente
 - Panel web para administración de usuarios, citas y servicios
